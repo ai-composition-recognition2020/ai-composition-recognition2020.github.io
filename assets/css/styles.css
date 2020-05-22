@@ -248,7 +248,7 @@ textarea {
 /* Generic section styling */
 .section {
   padding-top: 90px;
-  padding-bottom: 90px;
+  padding-bottom: 30px;
 }
 .section-title {
   text-transform: uppercase;
@@ -690,6 +690,7 @@ h1.logo a {
   max-width: 760px;
   margin: 0 auto;
   margin-bottom: 45px;
+  /*margin-bottom: 5px;*/
 }
 .updates-section .item-title {
   margin-top: 0;
