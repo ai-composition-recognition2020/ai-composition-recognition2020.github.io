@@ -142,7 +142,15 @@
                 <h3 class="item-title">音乐生成算法</h3>
 <!--                <div class="item-meta">Posted 1 month ago</div>-->
                 <div class="item-content">
-                    <p>使用三种算法</p>
+                    <p>&bullet; MusicTransformer<a href="https://arxiv.org/abs/1809.04281"> 论文链接 </a>
+                    选择最常用的语言模型，用自回归的方式，即根据前面的音符推测后面的音符，
+                        但是特征提取器采用效果更好的transformer，计划使用效果更好的Transformer-XL或者music transformer</p>
+                    <p>&bullet; MusicVAE<a href="https://arxiv.org/abs/1803.05428"> 论文链接 </a>
+                        用于生成音乐的VAE模型与生成图片的VAE设计上还是有区别的，VAE作为生成模
+型，目的是从隐变量中生成符合原始数据分布的数据，使用VAE进行音乐生成的时候，在encoder端
+得到隐含向量z后，在解码器端，同样会使用基于自回归的方式逐一生成音乐元素。但是VAE的
+训练方式属于无监督训练，在算法的本质上与语言模型还是有区别的。</p>
+                    <p>&bullet; MidiNet<a href="https://arxiv.org/abs/1703.10847"> 论文链接 </a></p>
 <!--                    <div class="img-holder center-block">-->
 <!--                        <img class="img-responsive" src="assets/images/data.png" alt="">-->
 <!--                    </div>-->
