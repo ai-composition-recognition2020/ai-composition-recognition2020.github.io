@@ -52,9 +52,9 @@
                         <li class="nav-item"><a href="https://ai-composition-recognition2020.github.io/english.html">English</a></li>
                         <li class="nav-item"><a class="scrollto" href="#introduction">比赛介绍</a></li>
                         <li class="nav-item"><a class="scrollto" href="#dataset">数据集</a></li>
-                        <li class="nav-item"><a class="scrollto" href="#baseline">检测基线</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#baseline">基线系统</a></li>
                         <li class="nav-item"><a class="scrollto" href="#timeline">赛程安排</a></li>
-                        <li class="nav-item"><a class="scrollto" href="#team">委员会</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#team">赛事委员会</a></li>
 <!--                        <li class="nav-item"><a class="scrollto" href="#faq">FAQ</a></li>-->
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->
@@ -142,15 +142,16 @@
                 <h3 class="item-title">音乐生成算法</h3>
 <!--                <div class="item-meta">Posted 1 month ago</div>-->
                 <div class="item-content">
-                    <p>&bullet; MusicTransformer<a href="https://arxiv.org/abs/1809.04281"> 论文链接 </a>
-                    选择最常用的语言模型，用自回归的方式，即根据前面的音符推测后面的音符，
-                        但是特征提取器采用效果更好的transformer，计划使用效果更好的Transformer-XL或者music transformer</p>
+                    <p>&bullet; MusicTransformer：<a href="https://arxiv.org/abs/1809.04281"> 论文链接 </a>
+                    该系统基于神经网络语言模型，用自回归的方式，即根据前面的音符推测后面的音符，
+                        MusicTransformer使用了transformer作为特征提取器，可以学习到音符之间长距离依赖关系。</p>
                     <p>&bullet; MusicVAE<a href="https://arxiv.org/abs/1803.05428"> 论文链接 </a>
-                        用于生成音乐的VAE模型与生成图片的VAE设计上还是有区别的，VAE作为生成模
+                        该系统基于变分自编码器（Variational Autoencoder, VAE）实现，
 型，目的是从隐变量中生成符合原始数据分布的数据，使用VAE进行音乐生成的时候，在encoder端
 得到隐含向量z后，在解码器端，同样会使用基于自回归的方式逐一生成音乐元素。但是VAE的
 训练方式属于无监督训练，在算法的本质上与语言模型还是有区别的。</p>
-                    <p>&bullet; MidiNet<a href="https://arxiv.org/abs/1703.10847"> 论文链接 </a></p>
+                    <p>&bullet; MidiNet<a href="https://arxiv.org/abs/1703.10847"> 论文链接 </a>
+                    该系统基于生成对抗网络（Generative Adversarial Networks, GAN）实现，</p>
 <!--                    <div class="img-holder center-block">-->
 <!--                        <img class="img-responsive" src="assets/images/data.png" alt="">-->
 <!--                    </div>-->
