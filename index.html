@@ -88,9 +88,9 @@
                         
 <!--                        <div class="meta">36% of <span class="goal">$50,000</span> goal</div>-->
                     </div><!--//progress-container-->
-                    <div class="cta-container">
-                        <a class="btn btn-primary btn-oval btn-cta" href="http://ali.dlddw.xyz:8080/">立即报名</a>
-                    </div><!--//cta-container-->
+<!--                    <div class="cta-container">-->
+<!--                        <a class="btn btn-primary btn-oval btn-cta" href="http://ali.dlddw.xyz:8080/">立即报名</a>-->
+<!--                    </div>&lt;!&ndash;//cta-container&ndash;&gt;-->
                     <div class="countdown-container">
                         <span class="hidden-xs">距 离 比 赛 截 止 剩 余   </span><span id="countdown-box" class="countdown-box"></span>
                     </div><!--//countdown-container-->
@@ -119,23 +119,44 @@
         <div class="container text-center">
             <h2 class="section-title">数据赛介绍</h2>
             <div class="item">
-                <h3 class="item-title">项目设置</h3>
-<!--                <div class="item-meta">Posted 1 day ago</div>-->
                 <div class="item-content">
-                    <p>项目。。。。。。。。。。。。。。。。<a href="#">link example</a>.</p>
-                    <div class="img-holder center-block">
-                        <img class="img-responsive" src="assets/images/flowchart.png" alt="">
-                    </div>
+                    本次挑战赛的目标是对人工智能生成的单旋律音乐进行识别。
+                    项目使用两种曲风有明显区别的数据库，分别对三种工作原理有明显区别的人工神经网络自动作曲系统进行训练，
+                    而后根据得到的六种模型生成一定数量人工智能音乐旋律， 音乐为MIDI格式，具体识别任务可以分为两个不同的子任务。
                 </div><!--//item-content-->
             </div><!--//item-->
             <div class="item">
-                <h3 class="item-title">训练数据集</h3>
+                <h3 class="item-title">子任务 A：判别特定旋律是否由人工智能算法生成</h3>
 <!--                <div class="item-meta">Posted 23 days ago</div>-->
                 <div class="item-content">
-                    <p>数据集</p>
-                    <div class="img-holder center-block">
-                        <img class="img-responsive" src="assets/images/data.png" alt="">
-                    </div>
+                    <p>A</p>
+                    <table border="1">
+                    <tr>
+                    <td>row 1, cell 1</td>
+                    <td>row 1, cell 2</td>
+                    </tr>
+                    <tr>
+                    <td>row 2, cell 1</td>
+                    <td>row 2, cell 2</td>
+                    </tr>
+                    </table>
+                </div><!--//item-content-->
+            </div><!--//item-->
+            <div class="item">
+                <h3 class="item-title">子任务 B：判别人工智能算法生成的旋律属于哪种生成算法</h3>
+<!--                <div class="item-meta">Posted 23 days ago</div>-->
+                <div class="item-content">
+                    <p>B</p>
+                </div><!--//item-content-->
+            </div><!--//item-->
+            <div class="item">
+                <h3 class="item-title">数据集</h3>
+<!--                <div class="item-meta">Posted 23 days ago</div>-->
+                <div class="item-content">
+                    <p>本次比赛使用两种风格的音乐分别训练模型，两种风格为流行音乐及巴洛克时期Bach的音乐</p>
+<!--                    <div class="img-holder center-block">-->
+<!--                        <img class="img-responsive" src="assets/images/data.png" alt="">-->
+<!--                    </div>-->
                 </div><!--//item-content-->
             </div><!--//item-->
             <div class="item">
@@ -146,12 +167,12 @@
                     该系统基于神经网络语言模型，用自回归的方式，即根据前面的音符推测后面的音符，
                         MusicTransformer使用了transformer作为特征提取器，可以学习到音符之间长距离依赖关系。</p>
                     <p>&bullet; MusicVAE<a href="https://arxiv.org/abs/1803.05428"> 论文链接 </a>
-                        该系统基于变分自编码器（Variational Autoencoder, VAE）实现，
-型，目的是从隐变量中生成符合原始数据分布的数据，使用VAE进行音乐生成的时候，在encoder端
-得到隐含向量z后，在解码器端，同样会使用基于自回归的方式逐一生成音乐元素。但是VAE的
-训练方式属于无监督训练，在算法的本质上与语言模型还是有区别的。</p>
+                        该系统基于变分自编码器（Variational Autoencoder, VAE）实现。现有的VAE模型很难对具有长期结构的序列进行建模。
+                        为了解决这个问题，MusicVAE建议使用一个分层解码器，它首先输出输入子序列的嵌入，然后使用这些嵌入独立地生成每个子序列。</p>
                     <p>&bullet; MidiNet<a href="https://arxiv.org/abs/1703.10847"> 论文链接 </a>
-                    该系统基于生成对抗网络（Generative Adversarial Networks, GAN）实现，</p>
+                    该系统基于生成对抗网络（Generative Adversarial Networks, GAN）实现。
+                        生成器和判别器均使用了卷积神经网络（Convolutional Neural Network, CNN）作为特征提取器，使用生成对抗的方式进行训练。
+                    生成器每次由高斯噪声生成一个小节的音乐，并且之前小节的音乐信息会作为控制信息加入，以此来保证音乐的长距离依赖性。</p>
 <!--                    <div class="img-holder center-block">-->
 <!--                        <img class="img-responsive" src="assets/images/data.png" alt="">-->
 <!--                    </div>-->
@@ -186,10 +207,10 @@
         <div class="container text-center">
             <h2 class="section-title">基线识别系统</h2>
             <div class="item">
-                <h3 class="item-title">基于CRNN的识别系统</h3>
+<!--                <h3 class="item-title">基于CRNN的识别系统</h3>-->
 <!--                <div class="item-meta">Posted 1 day ago</div>-->
                 <div class="item-content">
-                    <p>项目。。。。。。。。。。。。。。。。<a href="#">link example</a>.</p>
+                    <p>基线识别系统将于训练集数据发布时，同时发布。</p>
 <!--                    <div class="img-holder center-block">-->
 <!--                        <img class="img-responsive" src="assets/images/flowchart.png" alt="">-->
 <!--                    </div>-->

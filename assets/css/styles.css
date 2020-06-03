@@ -702,6 +702,8 @@ h1.logo a {
 }
 .updates-section .item-content {
   color: #586A8F;
+  text-align: left;
+  font-size: large;
 }
 .updates-section .img-holder {
   display: inline-block;
