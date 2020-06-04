@@ -687,7 +687,8 @@ h1.logo a {
 }
 /* ======= Updates Section ======= */
 .updates-section .item {
-  max-width: 760px;
+  /*max-width: 760px;*/
+  max-width: 860px;
   margin: 0 auto;
   margin-bottom: 45px;
   /*margin-bottom: 5px;*/
