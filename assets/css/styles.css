@@ -711,6 +711,32 @@ h1.logo a {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+/* ======= Yinji Section ======= */
+.yinji-section .item {
+  /*max-width: 760px;*/
+  max-width: 860px;
+  margin: 0 auto;
+  margin-bottom: 45px;
+  /*margin-bottom: 5px;*/
+}
+.yinji-section .item-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.yinji-section .item-meta {
+  color: #999;
+  margin-bottom: 30px;
+}
+.yinji-section .item-content {
+  color: #586A8F;
+  text-align: center;
+  font-size: large;
+}
+.yinji-section .img-holder {
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 /* ======= FAQ Section ======= */
 .timeline-container {
   position: relative;
