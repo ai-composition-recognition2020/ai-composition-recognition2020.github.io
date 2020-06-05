@@ -696,6 +696,7 @@ h1.logo a {
 .updates-section .item-title {
   margin-top: 0;
   margin-bottom: 15px;
+  text-align: left;
 }
 .updates-section .item-meta {
   color: #999;
