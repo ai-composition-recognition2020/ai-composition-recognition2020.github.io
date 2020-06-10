@@ -173,29 +173,35 @@
                         其中人工智能旋律与原有数据库中旋律有对应的标签，注意数据集中也会对不同风格的音乐进行标注，
                         但此任务不需要对风格进行分类。
                         开发数据包含2000首MIDI文件及一个csv文件，MIDI文件以下列方式命名。
-                    <div class="highlight"><pre><span></span><code><span class="p">
-                    [</span><span class="n">composer</span> <span class="n">label</span><span class="p">]</span><span class="o">-</span><span class="p">[</span><span class="n">style</span><span class="p">]</span><span class="o">-</span><span class="p">[</span><span class="n">id</span><span class="p">].</span><span class="n">mid</span>
-                        </code></pre></div>
-                        csv文件给出了对应文件的标签如下表所示，composer label中“0”对应的为人工智能旋律，“1”对应的为人创作的旋律；
-                        style label中“0”对应的为流行音乐，“1”对应的为巴赫音乐。
-                    <p></p>
+                    <pre>[composer label]-[style]-[id].mid</pre>
+                    <p>csv文件给出了对应文件的标签如下表所示，composer label中“0”对应的是人工智能作曲，“1”对应的是人类作曲。</p>
                     <table class="table">
                         <thead>
                         <tr class="active">
                             <td class="text-center" colspan="2"><strong>file name</strong></td>
-                            <td class="text-center" colspan="2"><strong>composer label</strong></td>
-                            <td class="text-center" colspan="3"><strong>style label</strong></td>
+                            <td class="text-center" colspan="2"><strong>style</strong></td>
+                            <td class="text-center" colspan="3"><strong>composer label</strong></td>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="text-center" colspan="2">xxx.mid</td>
-                            <td class="text-center" colspan="2">0</td>
+                            <td class="text-center" colspan="2">0-bach-0.mid</td>
+                            <td class="text-center" colspan="2">bach</td>
                             <td class="text-center" colspan="2">0</td>
                         </tr>
                         <tr>
-                            <td class="text-center" colspan="2">xxx.mid</td>
+                            <td class="text-center" colspan="2">0-bach-1.mid</td>
+                            <td class="text-center" colspan="2">bach</td>
+                            <td class="text-center" colspan="2">0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" colspan="2">1-pop-0.mid</td>
+                            <td class="text-center" colspan="2">pop</td>
                             <td class="text-center" colspan="2">1</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" colspan="2">1-pop-1.mid</td>
+                            <td class="text-center" colspan="2">pop</td>
                             <td class="text-center" colspan="2">1</td>
                         </tr>
                         </tbody>
@@ -240,9 +246,7 @@
                         并且不包含开发集中已选择的音乐不同。
                         另外10%的音乐，我们从作曲家目前尚未发表的作品中得到，这部分音乐不存在于目前任何已知的数据库当中。
                         评估集中的MIDI文件以下面的方式命名。
-                    <div class="highlight"><pre><span></span><code><span class="p">
-                    [</span><span class="n">style</span><span class="p">]</span><span class="o">-</span><span class="p">[</span><span class="n">id</span><span class="p">].</span><span class="n">mid</span>
-                    </code></pre></div>
+                    <pre>[style]-[id].mid</pre>
                         评估集中的数据具体分布如下表所示。
                     <p></p>
                     <table border="1" cellspacing="0" style="text-align: center;width: 100%">
@@ -307,36 +311,38 @@
                         每首旋律长度为8小节，其中1000首为系统A生成；1000首为系统B生成；1000首为系统C生成
                         不同系统生成的旋律标记有对应的标签。
                         开发数据包含3000首MIDI文件及一个csv文件，MIDI文件以下列方式命名。
-                        <div class="highlight"><pre><span></span><code><span class="p">
-                    [</span><span class="n">system</span> <span class="n">label</span><span class="p">]</span><span class="o">-</span><span class="p">[</span><span class="n">style</span><span class="p">]</span><span class="o">-</span><span class="p">[</span><span class="n">id</span><span class="p">].</span><span class="n">mid</span>
-                        </code></pre></div>
+                    <pre>[system label]-[style]-[id].mid</pre>
                         csv文件给出了对应文件的标签如下表所示，
-                        system label中“A”对应的为生成系统A，“B”对应的为生成系统B，“C”对应的为生成系统C；
-                        style label中“0”对应的为流行音乐，“1”对应的为巴赫音乐。
+                        system label中“A”对应的为生成系统A，“B”对应的为生成系统B，“C”对应的为生成系统C。
                     <p></p>
                     <table class="table">
                         <thead>
                         <tr class="active">
                             <td class="text-center" colspan="2"><strong>file name</strong></td>
-                            <td class="text-center" colspan="2"><strong>system label</strong></td>
-                            <td class="text-center" colspan="3"><strong>style label</strong></td>
+                            <td class="text-center" colspan="2"><strong>style</strong></td>
+                            <td class="text-center" colspan="3"><strong>system label</strong></td>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="text-center" colspan="2">xxx.mid</td>
+                            <td class="text-center" colspan="2">A-bach-0.mid</td>
+                            <td class="text-center" colspan="2">bach</td>
                             <td class="text-center" colspan="2">A</td>
-                            <td class="text-center" colspan="2">0</td>
                         </tr>
                         <tr>
-                            <td class="text-center" colspan="2">xxx.mid</td>
+                            <td class="text-center" colspan="2">B-bach-1.mid</td>
+                            <td class="text-center" colspan="2">bach</td>
                             <td class="text-center" colspan="2">B</td>
-                            <td class="text-center" colspan="2">0</td>
                         </tr>
                         <tr>
-                            <td class="text-center" colspan="2">xxx.mid</td>
+                            <td class="text-center" colspan="2">C-bach-2.mid</td>
+                            <td class="text-center" colspan="2">bach</td>
                             <td class="text-center" colspan="2">C</td>
-                            <td class="text-center" colspan="2">1</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" colspan="2">C-pop-0.mid</td>
+                            <td class="text-center" colspan="2">pop</td>
+                            <td class="text-center" colspan="2">C</td>
                         </tr>
                         </tbody>
                     </table>
@@ -381,9 +387,7 @@
                     <p>评估数据集包含了3000个MIDI文件，均为人工智能生成。每个文件为单旋律音乐，曲速为120bpm，
                         每首旋律长度为8小节，其中1000首为系统A生成；1000首为系统B生成；1000首为系统C生成。
                         评估集中的MIDI文件以下面的方式命名。
-                    <div class="highlight"><pre><span></span><code><span class="p">
-                    [</span><span class="n">style</span><span class="p">]</span><span class="o">-</span><span class="p">[</span><span class="n">id</span><span class="p">].</span><span class="n">mid</span>
-                    </code></pre></div>
+                    <pre>[style]-[id].mid</pre>
 
                         评估集中的数据具体分布如下表所示。
                     <p></p>

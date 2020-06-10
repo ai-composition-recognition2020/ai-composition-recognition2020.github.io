@@ -35,319 +35,105 @@
 
     <section id="introduction" class="updates-section section">
         <div class="container text-center">
-            <h2 class="section-title">数据赛介绍</h2>
+            <h2 class="section-title">提交</h2>
             <div class="item">
+                <h3 class="item-title">流程</h3>
                 <div class="item-content">
-                    本次挑战赛的目标是对人工智能生成的单旋律音乐进行识别。
-                    项目使用两种曲风有明显区别的数据库，分别对三种工作原理有明显区别的人工神经网络自动作曲系统进行训练，
-                    而后根据得到的六种模型生成一定数量人工智能音乐旋律， 音乐为MIDI格式，具体识别任务可以分为两个不同的子任务。
+
+                    <p>1. 参赛者使用评估数据集运行他们的系统，并以指定的格式生成系统输出。</p>
+                    <p>2. 参赛者需要整理系统代码。完整的代码需要实现读取评估数据集，计算，生成系统输出的功能。</p>
+                    <p>3. 参赛者在技术报告中详细介绍其识别算法，并提交一份技术报告。</p>
+                    <p>4. 参赛者将三种文件打包成zip，并提交。</p>
                 </div><!--//item-content-->
             </div><!--//item-->
             <div class="item">
-                <h3 class="item-title">数据集</h3>
+                <h3 class="item-title">提交系统</h3>
 <!--                <div class="item-meta">Posted 23 days ago</div>-->
                 <div class="item-content">
-                    <p>本次比赛使用两种风格的音乐分别训练模型，两种风格为流行音乐及巴洛克时期Bach的音乐</p>
+                    <p>提交系统将与2020年8月15日，评估集数据发布后开放。</p>
+                    <p>参与者同意对系统输出进行评估，并在<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a>许可下将结果和技术报告一起发布在人工智能作曲识别比赛网站上。</p>
 <!--                    <div class="img-holder center-block">-->
 <!--                        <img class="img-responsive" src="assets/images/data.png" alt="">-->
 <!--                    </div>-->
                 </div><!--//item-content-->
             </div><!--//item-->
             <div class="item">
-                <h3 class="item-title">音乐生成算法</h3>
+                <h3 class="item-title">提交文件命名</h3>
 <!--                <div class="item-meta">Posted 1 month ago</div>-->
                 <div class="item-content">
-                    <p>&bullet; <strong>系统A</strong> MusicTransformer：<a href="https://arxiv.org/abs/1809.04281"> 论文链接 </a>
-                    该系统基于神经网络语言模型，用自回归的方式，即根据前面的音符推测后面的音符，
-                        MusicTransformer使用了transformer作为特征提取器，可以学习到音符之间长距离依赖关系。</p>
-                    <p>&bullet; <strong>系统B</strong> MusicVAE<a href="https://arxiv.org/abs/1803.05428"> 论文链接 </a>
-                        该系统基于变分自编码器（Variational Autoencoder, VAE）实现。现有的VAE模型很难对具有长期结构的序列进行建模。
-                        为了解决这个问题，MusicVAE建议使用一个分层解码器，它首先输出输入子序列的嵌入，然后使用这些嵌入独立地生成每个子序列。</p>
-                    <p>&bullet; <strong>系统C</strong> MidiNet<a href="https://arxiv.org/abs/1703.10847"> 论文链接 </a>
-                    该系统基于生成对抗网络（Generative Adversarial Networks, GAN）实现。
-                        生成器和判别器均使用了卷积神经网络（Convolutional Neural Network, CNN）作为特征提取器，使用生成对抗的方式进行训练。
-                    生成器每次由高斯噪声生成一个小节的音乐，并且之前小节的音乐信息会作为控制信息加入，以此来保证音乐的长距离依赖性。</p>
-<!--                    <div class="img-holder center-block">-->
-<!--                        <img class="img-responsive" src="assets/images/data.png" alt="">-->
-<!--                    </div>-->
-<!--                    <div class="embed-responsive embed-responsive-16by9">-->
-<!--                        <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>-->
-<!--                    </div>-->
+                    <p>为了避免参赛者提交的文件重名，请使用以下规则来命名提交的文件。</p>
+                    <p><code>[first name]_[last name]_[Abbreviation of institute of the corresponding author]_task[subtask letter]</code></p>
+                    <p>如下面的例子所示。</p>
+                    <p>&bullet; <code>Hua_Li_BUPT_taskA</code></p>
+                    <p>&bullet; <code>Michael_Jordan_UNC_taskB</code></p>
+                    <p>确保提交的zip文件遵循以下的目录结构。zip包示例可以<a href="https://creativecommons.org/licenses/by/4.0/">这里</a>下载。</p>
+                    <pre>
+                        Hua_Li_BUPT_taskA.zip                                Zip-package root, Task A submissions
+                        │
+                        │   Hua_Li_BUPT_taskA_technical_report.pdf           Technical report
+                        │   Hua_Li_BUPT_taskA_output.csv                     Task A System output
+                        │
+                        └───Hua_Li_BUPT_taskA_code                           Task A System code
+                                  code.py
+
+                        Michael_Jordan_UNC_taskB.zip                         Zip-package root, Task A submissions
+                        │
+                        │   Michael_Jordan_UNC_taskB_technical_report.pdf    Technical report
+                        │   Michael_Jordan_UNC_taskB_output.csv              Task A System output
+                        │
+                        └───Michael_Jordan_UNC_taskB_code                    Task A System code
+                                  code.py</pre>
                 </div><!--//item-content-->
             </div><!--//item-->
+
+
             <div class="item">
-                <h3 class="item-title">子任务 A：判别特定旋律是否由人工智能算法生成</h3>
+                <h3 class="item-title">系统的输出文件</h3>
+<!--                <div class="item-meta">Posted 23 days ago</div>-->
+                <div class="item-content">
+                    <p>参赛者必须为提供的评估数据集提交结果。</p>
+                    <p>任务是独立的。您可以参与单个任务或多个任务。</p>
+                    <p>系统的输出文件为CSV格式，且带有标题行。须遵循不同子任务描述中指定的系统输出格式。</p>
+                    <p><font size="4"><strong>子任务 A</strong></font></p>
+                    <pre>
+                        file name               style               Human                  AI
+
+                        bach-0.mid               bach                0.8                   0.2
+                        bach-1.mid               bach                0.75                  0.25
+                        pop-0.mid                pop                 0.6                   0.4
+                        pop-1.mid                pop                 0.1                   0.9
+                    </pre>
+                    <p><font size="4"><strong>子任务 B</strong></font></p>
+                    <pre>
+                        file name               style                A                     B                  C
+
+                        bach-0.mid               bach                0.7                   0.2                0.1
+                        bach-1.mid               bach                0.25                  0.25               0.5
+                        pop-0.mid                pop                 0.6                   0.3                0.1
+                        pop-1.mid                pop                 0.1                   0.8                0.1
+                    </pre>
+
+                </div><!--//item-content-->
+            </div><!--//item-->
+
+            <div class="item">
+                <h3 class="item-title">系统代码</h3>
+<!--                <div class="item-meta">Posted 23 days ago</div>-->
+                <div class="item-content">
+                    <p>参赛者需要提交比赛使用的完整代码，代码需要实现读取评估数据集，计算，生成系统输出的功能，并且说明使用到的
+                    第三方库。</p>
+                </div><!--//item-content-->
+            </div><!--//item-->
+
+            <div class="item">
+                <h3 class="item-title">技术报告</h3>
 <!--                <div class="item-meta">Posted 23 days ago</div>-->
                 <div class="item-content">
                     <p>该任务的目的是辨别人工智能生成的旋律与人类创作的旋律，数据集中包含了两种风格的旋律，
-                        流行音乐及巴洛克时期巴赫的音乐，任何一种风格的音乐都包含人工智能生成的及人类创作的，
-                        参赛者需要将人工智能生成的旋律及人类创作的旋律进行分类， 比赛以分类准确率作为评判标准。</p>
-                    <p><font size="5"><strong>开发数据集</strong></font></p>
-                    <p>开发数据集包含了4000个MIDI文件，每个文件为单旋律音乐，曲速为120bpm，
-                        每首旋律长度为8小节，其中2000首为人工智能算法生成，2000首来自原有数据库。
-                        对于人工智能生成的音乐，使用流行音乐和巴赫音乐的数据库，分别对三种自动作曲系统进行训练得到六种模型。
-                    使用六种模型各生成一定数量的旋律组成2000首。
-                        对于人类的音乐，随机在两种风格的数据库中挑选一部分旋律，并切分8小节长度（该8小节并不一定为完整乐句），
-                        曲速调整为120bpm，组成2000首。
-                        其中人工智能旋律与原有数据库中旋律有对应的标签，注意数据集中也会对不同风格的音乐进行标注，
-                        但此任务不需要对风格进行分类。
-                        开发数据包含2000首MIDI文件及一个csv文件，MIDI文件以下列方式命名。
-                    <div class="highlight"><pre><span></span><code><span class="p">
-                    [</span><span class="n">composer</span> <span class="n">label</span><span class="p">]</span><span class="o">-</span><span class="p">[</span><span class="n">style</span><span class="p">]</span><span class="o">-</span><span class="p">[</span><span class="n">id</span><span class="p">].</span><span class="n">mid</span>
-                        </code></pre></div>
-                        csv文件给出了对应文件的标签如下表所示，composer label中“0”对应的为人工智能旋律，“1”对应的为人创作的旋律；
-                        style label中“0”对应的为流行音乐，“1”对应的为巴赫音乐。
-                    <p></p>
-                    <table class="table">
-                        <thead>
-                        <tr class="active">
-                            <td class="text-center" colspan="2"><strong>file name</strong></td>
-                            <td class="text-center" colspan="2"><strong>composer label</strong></td>
-                            <td class="text-center" colspan="3"><strong>style label</strong></td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td class="text-center" colspan="2">xxx.mid</td>
-                            <td class="text-center" colspan="2">0</td>
-                            <td class="text-center" colspan="2">0</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center" colspan="2">xxx.mid</td>
-                            <td class="text-center" colspan="2">1</td>
-                            <td class="text-center" colspan="2">1</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    开发集中的数据具体分布如下表所示。
-                    <p></p>
-                    <table border="1" cellspacing="0" style="text-align: center;width: 100%">
-                        <tr>
-                            <td rowspan="6" class="text-center" colspan="2">开发数据集</td>
-                        </tr>
-                        <tr>
-                            <td colspan="8">6000首MIDI（8小节长）</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">AI（50%）</td>
-                            <td colspan="4">人（50%）</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">3000首</td>
-                            <td colspan="4">3000首</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">流行（50%）</td>
-                            <td colspan="2">巴赫（50%）</td>
-                            <td colspan="2">流行（50%）</td>
-                            <td colspan="2">巴赫（50%）</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">1500首</td>
-                            <td colspan="2">1500首</td>
-                            <td colspan="2">1500首</td>
-                            <td colspan="2">1500首</td>
-                        </tr>
-
-                    </table></p>
-
-                    <p><font size="5"><strong>评估数据集</strong></font></p>
-                    <p>评估数据集包含了2000个MIDI文件，每个文件为单旋律音乐，曲速为120bpm，
-                        每首旋律长度为8小节。
-                        对于人工智能生成的音乐，旋律来源同开发集一样，有1000首。
-                        对于人类的音乐，在评估集中人类的音乐有两种来源，其中90%的音乐以和开发集相同的处理方法得到，
-                        并且不包含开发集中已选择的音乐不同。
-                        另外10%的音乐，我们从作曲家目前尚未发表的作品中得到，这部分音乐不存在于目前任何已知的数据库当中。
-                        评估集中的MIDI文件以下面的方式命名。
-                    <div class="highlight"><pre><span></span><code><span class="p">
-                    [</span><span class="n">style</span><span class="p">]</span><span class="o">-</span><span class="p">[</span><span class="n">id</span><span class="p">].</span><span class="n">mid</span>
-                    </code></pre></div>
-                        评估集中的数据具体分布如下表所示。
-                    <p></p>
-                    <table border="1" cellspacing="0" style="text-align: center;width: 100%">
-                        <tr>
-                            <td rowspan="9" class="text-center" colspan="2">评估数据集</td>
-                        </tr>
-                        <tr>
-                            <td colspan="8">2000首MIDI（8小节长）</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">AI（50%）</td>
-                            <td colspan="4">人（50%）</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">1000首</td>
-                            <td colspan="4">1000首</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2" colspan="2">不同的模型</td>
-                            <td colspan="2">原数据库（90%）</td>
-                            <td colspan="2">未发表（10%）</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">900首</td>
-                            <td colspan="2">100首</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">流行（50%）</td>
-                            <td colspan="1">巴赫（50%）</td>
-                            <td colspan="1">流行（50%）</td>
-                            <td colspan="1">巴赫（50%）</td>
-                            <td colspan="1">流行（50%）</td>
-                            <td colspan="1">巴赫（50%）</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">500首</td>
-                            <td colspan="1">500首</td>
-                            <td colspan="1">450首</td>
-                            <td colspan="1">450首</td>
-                            <td colspan="1">50首</td>
-                            <td colspan="1">50首</td>
-                        </tr>
-                    </table>
-                    </p>
-                    <p><font size="5"><strong>数据下载</strong></font></p>
-                    <p>训练集数据将于2020年7月15日发布</p>
-<!--                    <p><a href="#">开发集下载 <i class="fa fa-download"></i></a><span class="text-muted"> (50 MB)</span></p>-->
-<!--                    <p><a href="#">评估集下载 <i class="fa fa-download"></i></a><span class="text-muted"> (50 MB)</span></p>-->
-
-
+                        流行音乐及巴洛克时期巴赫的音乐</p>
                 </div><!--//item-content-->
             </div><!--//item-->
-            <div class="item">
-                <h3 class="item-title">子任务 B：判别人工智能算法生成的旋律属于哪种生成算法</h3>
-<!--                <div class="item-meta">Posted 23 days ago</div>-->
-                <div class="item-content">
-                    <p>该任务的目标是辨别人工智能生成的旋律属于三种自动作曲系统中的哪一种，
-                        将三种系统生成的两种风格的旋律混合在一起，每一个系统生成的旋律有相应的标签。
-                        参赛者需要将旋律分成三类，每一类对应一个自动作曲系统。比赛以分类准确率作为评判标准。</p>
-                    <p><font size="5"><strong>开发数据集</strong></font></p>
-                    <p>开发数据集包含了3000个MIDI文件，均为人工智能生成。每个文件为单旋律音乐，曲速为120bpm，
-                        每首旋律长度为8小节，其中1000首为系统A生成；1000首为系统B生成；1000首为系统C生成
-                        不同系统生成的旋律标记有对应的标签。
-                        开发数据包含3000首MIDI文件及一个csv文件，MIDI文件以下列方式命名。
-                        <div class="highlight"><pre><span></span><code><span class="p">
-                    [</span><span class="n">system</span> <span class="n">label</span><span class="p">]</span><span class="o">-</span><span class="p">[</span><span class="n">style</span><span class="p">]</span><span class="o">-</span><span class="p">[</span><span class="n">id</span><span class="p">].</span><span class="n">mid</span>
-                        </code></pre></div>
-                        csv文件给出了对应文件的标签如下表所示，
-                        system label中“A”对应的为生成系统A，“B”对应的为生成系统B，“C”对应的为生成系统C；
-                        style label中“0”对应的为流行音乐，“1”对应的为巴赫音乐。
-                    <p></p>
-                    <table class="table">
-                        <thead>
-                        <tr class="active">
-                            <td class="text-center" colspan="2"><strong>file name</strong></td>
-                            <td class="text-center" colspan="2"><strong>system label</strong></td>
-                            <td class="text-center" colspan="3"><strong>style label</strong></td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td class="text-center" colspan="2">xxx.mid</td>
-                            <td class="text-center" colspan="2">A</td>
-                            <td class="text-center" colspan="2">0</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center" colspan="2">xxx.mid</td>
-                            <td class="text-center" colspan="2">B</td>
-                            <td class="text-center" colspan="2">0</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center" colspan="2">xxx.mid</td>
-                            <td class="text-center" colspan="2">C</td>
-                            <td class="text-center" colspan="2">1</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    开发集中的数据具体分布如下表所示。
-                    <p></p>
-                    <table border="1" cellspacing="0" style="text-align: center;width: 100%">
-                        <tr>
-                            <td rowspan="9" class="text-center" colspan="2">评估数据集</td>
-                        </tr>
-                        <tr>
-                            <td colspan="6">3000首MIDI（8小节长）</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">系统A（1/3）</td>
-                            <td colspan="2">系统B（1/3）</td>
-                            <td colspan="2">系统C（1/3）</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">1000首</td>
-                            <td colspan="2">1000首</td>
-                            <td colspan="2">1000首</td>
-                        </tr>
 
-                        <tr>
-                            <td colspan="1">流行（50%）</td>
-                            <td colspan="1">巴赫（50%）</td>
-                            <td colspan="1">流行（50%）</td>
-                            <td colspan="1">巴赫（50%）</td>
-                            <td colspan="1">流行（50%）</td>
-                            <td colspan="1">巴赫（50%）</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">500首</td>
-                            <td colspan="1">500首</td>
-                            <td colspan="1">500首</td>
-                            <td colspan="1">500首</td>
-                            <td colspan="1">500首</td>
-                            <td colspan="1">500首</td>
-                        </tr>
-                    </table></p>
-                    <p><font size="5"><strong>评估数据集</strong></font></p>
-                    <p>评估数据集包含了3000个MIDI文件，均为人工智能生成。每个文件为单旋律音乐，曲速为120bpm，
-                        每首旋律长度为8小节，其中1000首为系统A生成；1000首为系统B生成；1000首为系统C生成。
-                        评估集中的MIDI文件以下面的方式命名。
-                    <div class="highlight"><pre><span></span><code><span class="p">
-                    [</span><span class="n">style</span><span class="p">]</span><span class="o">-</span><span class="p">[</span><span class="n">id</span><span class="p">].</span><span class="n">mid</span>
-                    </code></pre></div>
-
-                        评估集中的数据具体分布如下表所示。
-                    <p></p>
-                    <table border="1" cellspacing="0" style="text-align: center;width: 100%">
-                        <tr>
-                            <td rowspan="9" class="text-center" colspan="2">评估数据集</td>
-                        </tr>
-                        <tr>
-                            <td colspan="6">3000首MIDI（8小节长）</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">系统A（1/3）</td>
-                            <td colspan="2">系统B（1/3）</td>
-                            <td colspan="2">系统C（1/3）</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">1000首</td>
-                            <td colspan="2">1000首</td>
-                            <td colspan="2">1000首</td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="1">流行（50%）</td>
-                            <td colspan="1">巴赫（50%）</td>
-                            <td colspan="1">流行（50%）</td>
-                            <td colspan="1">巴赫（50%）</td>
-                            <td colspan="1">流行（50%）</td>
-                            <td colspan="1">巴赫（50%）</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">500首</td>
-                            <td colspan="1">500首</td>
-                            <td colspan="1">500首</td>
-                            <td colspan="1">500首</td>
-                            <td colspan="1">500首</td>
-                            <td colspan="1">500首</td>
-                        </tr>
-                    </table></p>
-                    <p><font size="5"><strong>数据下载</strong></font></p>
-                    <p>训练集数据将于2020年7月15日发布</p>
-<!--                    <p><a href="#">开发集下载 <i class="fa fa-download"></i></a><span class="text-muted"> (50 MB)</span></p>-->
-<!--                    <p><a href="#">评估集下载 <i class="fa fa-download"></i></a><span class="text-muted"> (50 MB)</span></p>-->
-
-                </div><!--//item-content-->
-            </div><!--//item-->
         </div><!--//container-->
     </section><!--//updates-section-->
 
