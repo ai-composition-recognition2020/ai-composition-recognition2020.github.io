@@ -382,6 +382,11 @@ h1.logo a {
   padding-top: 150px;
   padding-bottom: 120px;
 }
+.en-promo-section {
+  padding-top: 150px;
+  padding-bottom: 120px;
+  line-height: 10px;
+}
 .promo-section .headline {
   margin-top: 0;
   margin-bottom: 60px;
@@ -1076,6 +1081,10 @@ h1.logo a {
   }
   .promo-section .data-container {
     text-align: left;
+  }
+  .promo-section .en-data-container {
+    text-align: left;
+    line-height: normal;
   }
   .promo-section .progress-bar {
     margin-left: inherit;
