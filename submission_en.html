@@ -90,17 +90,16 @@
                 <div class="item-content">
                     <p>Participants must submit the results for the provided evaluation datasets.</p>
 <!--                    <p>任务是独立的。您可以参与单个任务或多个任务。</p>-->
-                    <p>System output should be presented as a single text-file (in CSV format, with a header row)
-                        containing classification result for each audio file in the evaluation set.
-                        The following system output format must be followed.</p>
+                    <p>System output should be presented as a single text-file (in CSV format, with a header row) containing <strong>classification result(float type)</strong>
+                    for each audio file in the evaluation set.</p> and <strong>label of styles of music(str type)</strong>.</p>
 <!--                    <p><font size="4"><strong>子任务 A</strong></font></p>-->
                     <pre>
-                        file name               style               Human                  AI
+                        file name               style（str）               Human（float）                  AI（float）
 
-                        bach-0.mid               bach                0.8                   0.2
-                        bach-1.mid               bach                0.75                  0.25
-                        pop-0.mid                pop                 0.6                   0.4
-                        pop-1.mid                pop                 0.1                   0.9
+                        0.mid                   A                          0.8                            0.2
+                        1.mid                   A                          0.75                           0.25
+                        2.mid                   B                          0.6                            0.4
+                        3.mid                   B                          0.1                            0.9
                     </pre>
                 </div><!--//item-content-->
             </div><!--//item-->
