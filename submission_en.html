@@ -35,38 +35,43 @@
 
     <section id="introduction" class="updates-section section">
         <div class="container text-center">
-            <h2 class="section-title">提交</h2>
+            <h2 class="section-title">submission</h2>
             <div class="item">
-                <h3 class="item-title">流程</h3>
+                <h3 class="item-title">Submission process shortly:</h3>
                 <div class="item-content">
 
-                    <p>1. 参赛者使用评估数据集运行他们的系统，并以指定的格式生成系统输出。</p>
+                    <p>1. Participants run their system with evaluation dataset, and produce the system output in specified format.</p>
                     <p>2. 参赛者需要整理系统代码。完整的代码需要实现读取评估数据集，计算，生成系统输出的功能。</p>
-                    <p>3. 参赛者在技术报告中详细介绍其识别算法，并提交一份技术报告。</p>
-                    <p>4. 参赛者将三种文件打包成zip，并提交。</p>
+                    <p>3. Participants describe their system in a technical report in sufficient detail.</p>
+                    <p>4. Participants prepare the submission package (zip-file). The submission package contains system outputs,
+                        a complete system code that can be run (in a separate folder) and the technical report.</p>
                 </div><!--//item-content-->
             </div><!--//item-->
             <div class="item">
-                <h3 class="item-title">提交系统</h3>
+                <h3 class="item-title">Submission system</h3>
 <!--                <div class="item-meta">Posted 23 days ago</div>-->
                 <div class="item-content">
                     <p>提交系统将与2020年8月15日，评估集数据发布后开放。</p>
-                    <p>参与者同意对系统输出进行评估，并在<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a>许可下将结果和技术报告一起发布在人工智能作曲识别比赛网站上。</p>
+                    <p>By submitting to the challenge, participants agree for the system output to be evaluated
+                        and to be published together with the results and the technical report on the Challenge
+                        website under
+                        <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY license</a>.</p>
 <!--                    <div class="img-holder center-block">-->
 <!--                        <img class="img-responsive" src="assets/images/data.png" alt="">-->
 <!--                    </div>-->
                 </div><!--//item-content-->
             </div><!--//item-->
             <div class="item">
-                <h3 class="item-title">提交文件命名</h3>
+                <h3 class="item-title">Submission file label</h3>
 <!--                <div class="item-meta">Posted 1 month ago</div>-->
                 <div class="item-content">
-                    <p>为了避免参赛者提交的文件重名，请使用以下规则来命名提交的文件。</p>
+                    <p>To avoid overlapping labels among all submitted systems, use following way to form your label:</p>
                     <p><code>[first name]_[last name]_[Abbreviation of institute of the corresponding author]</code></p>
-                    <p>如下面的例子所示。</p>
+                    <p>For example the systems would have the following labels:</p>
                     <p>&bullet; <code>Hua_Li_BUPT</code></p>
                     <p>&bullet; <code>Michael_Jordan_UNC</code></p>
-                    <p>确保提交的zip文件遵循以下的目录结构。zip包示例可以<a href="https://ai-composition-recognition2020.github.io/Hua_Li_BUPT_taskA.zip">这里</a>下载。</p>
+                    <p>Make sure your zip-package follows provided file naming convention and directory structure.
+                        The zip package example can be downloaded <a href="https://ai-composition-recognition2020.github.io/Hua_Li_BUPT_taskA.zip">here</a>.</p>
                     <pre>
                         Hua_Li_BUPT.zip                                Zip-package root, Task submissions
                         │
@@ -80,12 +85,14 @@
 
 
             <div class="item">
-                <h3 class="item-title">系统的输出文件</h3>
+                <h3 class="item-title">System outputs</h3>
 <!--                <div class="item-meta">Posted 23 days ago</div>-->
                 <div class="item-content">
-                    <p>参赛者必须为提供的评估数据集提交结果。</p>
+                    <p>Participants must submit the results for the provided evaluation datasets.</p>
 <!--                    <p>任务是独立的。您可以参与单个任务或多个任务。</p>-->
-                    <p>系统的输出文件为CSV格式，且带有标题行。须遵循不同子任务描述中指定的系统输出格式。</p>
+                    <p>System output should be presented as a single text-file (in CSV format, with a header row)
+                        containing classification result for each audio file in the evaluation set.
+                        The following system output format must be followed.</p>
 <!--                    <p><font size="4"><strong>子任务 A</strong></font></p>-->
                     <pre>
                         file name               style               Human                  AI
@@ -99,7 +106,7 @@
             </div><!--//item-->
 
             <div class="item">
-                <h3 class="item-title">系统代码</h3>
+                <h3 class="item-title">System code</h3>
 <!--                <div class="item-meta">Posted 23 days ago</div>-->
                 <div class="item-content">
                     <p>参赛者需要提交比赛使用的完整代码，代码需要实现读取评估数据集，计算，生成系统输出的功能，并且说明使用到的第三方库。</p>
@@ -107,10 +114,12 @@
             </div><!--//item-->
 
             <div class="item">
-                <h3 class="item-title">技术报告</h3>
+                <h3 class="item-title">Technical report</h3>
 <!--                <div class="item-meta">Posted 23 days ago</div>-->
                 <div class="item-content">
-                    <p>参赛者需提交有关提交系统的技术报告，以帮助主办方更好地了解该算法的工作原理。技术报告只能使用中文或者英文两种语言。</p>
+                    <p>All participants are expected to submit a technical report about the submitted system,
+                        to help the organizer better understand how the algorithm works.
+                        Technical reports can only be used in Chinese or English.</p>
                 </div><!--//item-content-->
             </div><!--//item-->
 
