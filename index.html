@@ -119,13 +119,13 @@
             <h2 class="section-title">数据赛介绍</h2>
             <div class="item">
                 <div class="item-content">
-                    本次挑战赛的目标是对人工智能生成的单旋律音乐进行识别。
-                    项目使用两种曲风有明显区别的数据库，分别对三种工作原理有明显区别的人工神经网络自动作曲系统进行训练，
+                    本次挑战赛的目的是对人工智能生成的单旋律音乐进行识别。
+                    比赛使用两种曲风有明显区别的数据库，分别对三种工作原理有明显区别的人工神经网络自动作曲系统进行训练，
                     而后根据得到的六种模型生成一定数量人工智能音乐旋律， 音乐为MIDI格式，参赛者需要使用算法对不同来源的音乐进行分类。
                 </div><!--//item-content-->
             </div><!--//item-->
             <div class="item">
-                <h3 class="item-title">数据集</h3>
+                <h3 class="item-title">数据集（训练生成系统）</h3>
 <!--                <div class="item-meta">Posted 23 days ago</div>-->
                 <div class="item-content">
                     <p>本次比赛使用两种风格的音乐分别训练模型，两种风格为流行音乐及巴洛克时期Bach的音乐。
@@ -158,7 +158,7 @@
 <!--                </div>&lt;!&ndash;//item-content&ndash;&gt;-->
 <!--            </div>&lt;!&ndash;//item&ndash;&gt;-->
             <div class="item">
-                <h3 class="item-title">子任务 A：判别特定旋律是否由人工智能算法生成</h3>
+                <h3 class="item-title">判别特定旋律是否由人工智能算法生成</h3>
 <!--                <div class="item-meta">Posted 23 days ago</div>-->
                 <div class="item-content">
                     <p>该任务的目的是辨别人工智能生成的旋律与人类创作的旋律，数据集中包含了两种风格的旋律，
@@ -209,14 +209,14 @@
                     </table>
 
 
-                    开发集中的数据具体分布如下表所示。
+                    开发集中的数据数量如下表所示。
                     <p></p>
                     <table border="1" cellspacing="0" style="text-align: center;width: 100%">
                         <tr>
                             <td rowspan="6" class="text-center" colspan="2">开发数据集</td>
                         </tr>
                         <tr>
-                            <td colspan="8">6000首MIDI（8小节长）</td>
+                            <td colspan="8">4000首MIDI（8小节长）</td>
                         </tr>
 <!--                        <tr>-->
 <!--                            <td colspan="4">AI（50%）</td>-->
@@ -249,7 +249,7 @@
                         另外10%的音乐，我们从作曲家目前尚未发表的作品中得到，这部分音乐不存在于目前任何已知的数据库当中。
                         评估集中的MIDI文件以下面的方式命名。
                     <pre>[style]-[id].mid</pre>
-                        评估集中的数据具体分布如下表所示。
+                        评估集中的数据量如下表所示。
                     <p></p>
                     <table border="1" cellspacing="0" style="text-align: center;width: 100%">
                         <tr>
@@ -299,139 +299,6 @@
 <!--                    <p><a href="#">评估集下载 <i class="fa fa-download"></i></a><span class="text-muted"> (50 MB)</span></p>-->
                 </div><!--//item-content-->
             </div><!--//item-->
-            <div class="item">
-                <h3 class="item-title">子任务 B：判别人工智能算法生成的旋律属于哪种生成算法</h3>
-<!--                <div class="item-meta">Posted 23 days ago</div>-->
-                <div class="item-content">
-                    <p>该任务的目标是辨别人工智能生成的旋律属于三种自动作曲系统中的哪一种，
-                        将三种系统生成的两种风格的旋律混合在一起，每一个系统生成的旋律有相应的标签。
-                        参赛者需要将旋律分成三类，每一类对应一个自动作曲系统。比赛以分类准确率作为评判标准。</p>
-                    <p><font size="5"><strong>开发数据集</strong></font></p>
-                    <p>开发数据集包含了3000个MIDI文件，均为人工智能生成。每个文件为单旋律音乐，曲速为120bpm，
-                        每首旋律长度为8小节，其中1000首为系统A生成；1000首为系统B生成；1000首为系统C生成
-                        不同系统生成的旋律标记有对应的标签。
-                        开发数据包含3000首MIDI文件及一个csv文件，MIDI文件以下列方式命名。
-                    <pre>[system label]-[style]-[id].mid</pre>
-                        csv文件给出了对应文件的标签如下表所示，
-                        system label中“A”对应的为生成系统A，“B”对应的为生成系统B，“C”对应的为生成系统C。
-                    <p></p>
-                    <table class="table">
-                        <thead>
-                        <tr class="active">
-                            <td class="text-center" colspan="2"><strong>file name</strong></td>
-                            <td class="text-center" colspan="2"><strong>style</strong></td>
-                            <td class="text-center" colspan="3"><strong>system label</strong></td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td class="text-center" colspan="2">A-bach-0.mid</td>
-                            <td class="text-center" colspan="2">bach</td>
-                            <td class="text-center" colspan="2">A</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center" colspan="2">B-bach-1.mid</td>
-                            <td class="text-center" colspan="2">bach</td>
-                            <td class="text-center" colspan="2">B</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center" colspan="2">C-bach-2.mid</td>
-                            <td class="text-center" colspan="2">bach</td>
-                            <td class="text-center" colspan="2">C</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center" colspan="2">C-pop-0.mid</td>
-                            <td class="text-center" colspan="2">pop</td>
-                            <td class="text-center" colspan="2">C</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    开发集中的数据具体分布如下表所示。
-                    <p></p>
-                    <table border="1" cellspacing="0" style="text-align: center;width: 100%">
-                        <tr>
-                            <td rowspan="9" class="text-center" colspan="2">评估数据集</td>
-                        </tr>
-                        <tr>
-                            <td colspan="6">3000首MIDI（8小节长）</td>
-                        </tr>
-<!--                        <tr>-->
-<!--                            <td colspan="2">系统A（1/3）</td>-->
-<!--                            <td colspan="2">系统B（1/3）</td>-->
-<!--                            <td colspan="2">系统C（1/3）</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td colspan="2">1000首</td>-->
-<!--                            <td colspan="2">1000首</td>-->
-<!--                            <td colspan="2">1000首</td>-->
-<!--                        </tr>-->
-
-<!--                        <tr>-->
-<!--                            <td colspan="1">流行（50%）</td>-->
-<!--                            <td colspan="1">巴赫（50%）</td>-->
-<!--                            <td colspan="1">流行（50%）</td>-->
-<!--                            <td colspan="1">巴赫（50%）</td>-->
-<!--                            <td colspan="1">流行（50%）</td>-->
-<!--                            <td colspan="1">巴赫（50%）</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td colspan="1">500首</td>-->
-<!--                            <td colspan="1">500首</td>-->
-<!--                            <td colspan="1">500首</td>-->
-<!--                            <td colspan="1">500首</td>-->
-<!--                            <td colspan="1">500首</td>-->
-<!--                            <td colspan="1">500首</td>-->
-<!--                        </tr>-->
-                    </table></p>
-                    <p><font size="5"><strong>评估数据集</strong></font></p>
-                    <p>评估数据集包含了3000个MIDI文件，均为人工智能生成。每个文件为单旋律音乐，曲速为120bpm，
-                        每首旋律长度为8小节，其中1000首为系统A生成；1000首为系统B生成；1000首为系统C生成。
-                        评估集中的MIDI文件以下面的方式命名。
-                    <pre>[style]-[id].mid</pre>
-
-                        评估集中的数据具体分布如下表所示。
-                    <p></p>
-                    <table border="1" cellspacing="0" style="text-align: center;width: 100%">
-                        <tr>
-                            <td rowspan="9" class="text-center" colspan="2">评估数据集</td>
-                        </tr>
-                        <tr>
-                            <td colspan="6">3000首MIDI（8小节长）</td>
-                        </tr>
-<!--                        <tr>-->
-<!--                            <td colspan="2">系统A（1/3）</td>-->
-<!--                            <td colspan="2">系统B（1/3）</td>-->
-<!--                            <td colspan="2">系统C（1/3）</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td colspan="2">1000首</td>-->
-<!--                            <td colspan="2">1000首</td>-->
-<!--                            <td colspan="2">1000首</td>-->
-<!--                        </tr>-->
-
-<!--                        <tr>-->
-<!--                            <td colspan="1">流行（50%）</td>-->
-<!--                            <td colspan="1">巴赫（50%）</td>-->
-<!--                            <td colspan="1">流行（50%）</td>-->
-<!--                            <td colspan="1">巴赫（50%）</td>-->
-<!--                            <td colspan="1">流行（50%）</td>-->
-<!--                            <td colspan="1">巴赫（50%）</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td colspan="1">500首</td>-->
-<!--                            <td colspan="1">500首</td>-->
-<!--                            <td colspan="1">500首</td>-->
-<!--                            <td colspan="1">500首</td>-->
-<!--                            <td colspan="1">500首</td>-->
-<!--                            <td colspan="1">500首</td>-->
-<!--                        </tr>-->
-                    </table></p>
-                    <p><font size="5"><strong>数据下载</strong></font></p>
-                    <p>训练集数据将于2020年7月15日发布</p>
-<!--                    <p><a href="#">开发集下载 <i class="fa fa-download"></i></a><span class="text-muted"> (50 MB)</span></p>-->
-<!--                    <p><a href="#">评估集下载 <i class="fa fa-download"></i></a><span class="text-muted"> (50 MB)</span></p>-->
-                </div><!--//item-content-->
-            </div><!--//item-->
         </div><!--//container-->
     </section><!--//updates-section-->
 
@@ -445,7 +312,7 @@
                     <style>
                         .p1{text-indent: 2em;}
                     </style>
-                    <p>参赛者可以选择仅参加一个子任务，或者同时参加两个子任务</p>
+<!--                    <p>参赛者可以选择仅参加一个子任务，或者同时参加两个子任务</p>-->
                     <p>参赛者需要提交一个打包的zip文件，该zip包括：</p>
                     <p class="p1">&bullet; 系统的输出文件（*.csv）</p>
                     <p class="p1">&bullet; 对系统作出详细解释的技术报告（*.pdf）</p>
@@ -549,7 +416,7 @@
     				</div>
     				<div class="timeline-content">
         				<div class="time">9 月 15 日</div>
-    					<h4 class="title">提交测试集标签信息</h4>
+    					<h4 class="title">提交比赛所需文件</h4>
 <!--    					<div class="desc">-->
 <!--    						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.    					              -->
 <!--    				    </div>-->
@@ -569,21 +436,21 @@
     				</div><!--//timeline-content-->
     			</div><!--//timeline-item-->
     			
-    			<div class="timeline-item clearfix">
-    				<div class="timeline-icon">
-                        <i class="fa fa-users icon"></i>
-    				</div>
-    				<div class="timeline-content">
-        				<div class="time">9 月 30 日</div>
-    					<h4 class="title">提交技术报告</h4>
-    				</div><!--//timeline-content-->
-    			</div><!--//timeline-item-->
+<!--    			<div class="timeline-item clearfix">-->
+<!--    				<div class="timeline-icon">-->
+<!--                        <i class="fa fa-users icon"></i>-->
+<!--    				</div>-->
+<!--    				<div class="timeline-content">-->
+<!--        				<div class="time">9 月 30 日</div>-->
+<!--    					<h4 class="title">提交技术报告</h4>-->
+<!--    				</div>&lt;!&ndash;//timeline-content&ndash;&gt;-->
+<!--    			</div>&lt;!&ndash;//timeline-item&ndash;&gt;-->
     			
     			<div class="timeline-item clearfix">
     				<div class="timeline-icon">
                         <i class="fa fa-gift icon"></i>
     				</div>
-    				<div class="timeline-content right">
+    				<div class="timeline-content">
         				<div class="time">10 月 1 日— 10 月 20 日</div>
     					<h4 class="title">技术报告审稿</h4>
 <!--    					<div class="desc">-->
@@ -596,7 +463,7 @@
     				<div class="timeline-icon">
                         <i class="fa fa-rocket icon"></i>
     				</div>
-    				<div class="timeline-content">
+    				<div class="timeline-content right">
         				<div class="time">10 月 20 日</div>
     					<h4 class="title">公布技术报告接收结果</h4>
 <!--    					<div class="desc">-->
@@ -609,7 +476,7 @@
     				<div class="timeline-icon">
                         <i class="fa fa-arrows icon"></i>
     				</div>
-    				<div class="timeline-content right">
+    				<div class="timeline-content">
         				<div class="time">11 月 4 日（会期）</div>
     					<h4 class="title">公布结果及报告展示</h4>
 <!--    					<div class="desc">-->
@@ -638,7 +505,7 @@
                 <div class="item col-xs-6">
                     <div class="item-inner">
                         <div class="profile-holder">
-                            <img src="assets/images/team/bupt2.jpg" alt="">
+                            <img src="assets/images/team/zhangru120.jpg" alt="">
                         </div><!--//profile-holder-->
                         <div class="content-holder">
                             <h4 class="name">张茹</h4>
@@ -667,7 +534,7 @@
                 <div class="item col-xs-6">
                     <div class="item-inner">
                         <div class="profile-holder">
-                            <img src="assets/images/team/bupt2.jpg" alt="">
+                            <img src="assets/images/team/zijin120.jpg" alt="">
                         </div><!--//profile-holder-->
                         <div class="content-holder">
                             <h4 class="name">李子晋</h4>
@@ -710,7 +577,7 @@
                 <div class="item col-xs-6">
                     <div class="item-inner">
                         <div class="profile-holder">
-                            <img src="assets/images/team/bupt2.jpg" alt="">
+                            <img src="assets/images/team/shengchen120.jpg" alt="">
                         </div><!--//profile-holder-->
                         <div class="content-holder">
                             <h4 class="name">李圣辰</h4>
@@ -733,7 +600,7 @@
             <div class="footer-content text-center">
                 <div class="social-container">
                     <ul class="list-inline social-list">
-                        <li><a href="https://mp.weixin.qq.com/s/8HLMpQRV5FSH49WjobtFbQ"><i class="fa fa-wechat"></i></a></li>
+                        <li><a href="https://mp.weixin.qq.com/s/RBcNVB8sqD6eQCFx11I1ZQ"><i class="fa fa-wechat"></i></a></li>
 <!--                        <li><a href="#"><i class="fa fa-mail-reply"></i></a></li>-->
 <!--                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>-->
 <!--                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
