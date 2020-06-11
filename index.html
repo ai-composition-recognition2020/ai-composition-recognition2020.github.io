@@ -119,20 +119,9 @@
             <h2 class="section-title">数据赛介绍</h2>
             <div class="item">
                 <div class="item-content">
-                    本次挑战赛的目的是对人工智能生成的单旋律音乐进行识别。
+                    本次挑战赛的目的是对人工智能生成的单旋律音乐进行识别，即<strong>判别特定旋律是否由人工智能算法生成。</strong>
                     比赛使用两种曲风有明显区别的数据库，分别对三种工作原理有明显区别的人工神经网络自动作曲系统进行训练，
-                    而后根据得到的六种模型生成一定数量人工智能音乐旋律， 音乐为MIDI格式，参赛者需要使用算法对不同来源的音乐进行分类。
-                </div><!--//item-content-->
-            </div><!--//item-->
-            <div class="item">
-                <h3 class="item-title">数据集（训练生成系统）</h3>
-<!--                <div class="item-meta">Posted 23 days ago</div>-->
-                <div class="item-content">
-                    <p>本次比赛使用两种风格的音乐分别训练模型，两种风格为流行音乐及巴洛克时期Bach的音乐。
-                        其中流行音乐只使用旋律部分，Bach的音乐将每一声部的旋律作为单旋律。</p>
-<!--                    <div class="img-holder center-block">-->
-<!--                        <img class="img-responsive" src="assets/images/data.png" alt="">-->
-<!--                    </div>-->
+                    而后根据得到的六种模型生成一定数量人工智能音乐旋律， 音乐为MIDI格式，参赛者需要使用算法对不同来源的音乐进行分类。比赛以分类准确率作为评判标准。
                 </div><!--//item-content-->
             </div><!--//item-->
 <!--            <div class="item">-->
@@ -158,12 +147,12 @@
 <!--                </div>&lt;!&ndash;//item-content&ndash;&gt;-->
 <!--            </div>&lt;!&ndash;//item&ndash;&gt;-->
             <div class="item">
-                <h3 class="item-title">判别特定旋律是否由人工智能算法生成</h3>
+<!--                <h3 class="item-title">判别特定旋律是否由人工智能算法生成</h3>-->
 <!--                <div class="item-meta">Posted 23 days ago</div>-->
                 <div class="item-content">
-                    <p>该任务的目的是辨别人工智能生成的旋律与人类创作的旋律，数据集中包含了两种风格的旋律，
-                        流行音乐及巴洛克时期巴赫的音乐，任何一种风格的音乐都包含人工智能生成的及人类创作的，
-                        参赛者需要将人工智能生成的旋律及人类创作的旋律进行分类， 比赛以分类准确率作为评判标准。</p>
+                    <p><font size="5"><strong>训练数据（用作训练自动作曲生成系统）</strong></font></p>
+                    <p>本次比赛使用两种风格的音乐分别训练模型，两种风格为流行音乐及巴洛克时期Bach的音乐。
+                        其中流行音乐只使用旋律部分，Bach的音乐将每一声部的旋律作为单旋律。</p>
                     <p><font size="5"><strong>开发数据集</strong></font></p>
                     <p>开发数据集包含了4000个MIDI文件，每个文件为单旋律音乐，曲速为120bpm，
                         每首旋律长度为8小节，其中2000首为人工智能算法生成，2000首来自原有数据库。
@@ -313,12 +302,13 @@
                         .p1{text-indent: 2em;}
                     </style>
 <!--                    <p>参赛者可以选择仅参加一个子任务，或者同时参加两个子任务</p>-->
-                    <p>参赛者需要提交一个打包的zip文件，该zip包括：</p>
+                    <p>Official challenge submission consists of:</p>
                     <p class="p1">&bullet; 系统的输出文件（*.csv）</p>
                     <p class="p1">&bullet; 对系统作出详细解释的技术报告（*.pdf）</p>
                     <p class="p1">&bullet; 可以运行的完整系统（放在单独的文件夹中）</p>
                     <p>系统输出文件应为单个文件（CSV格式，带有标题行），其中包含<strong>评估数据集</strong>中
                     每一个MIDI文件的分类结果，并且结果需要包含每个标签的输出概率值。</p>
+                    <p>All files should be packaged into a zip file for submission.</p>
                     <p>提交的详细信息请查看<a href="https://ai-composition-recognition2020.github.io/submission.html">提交页面</a>。</p>
                 </div><!--//item-content-->
             </div><!--//item-->
@@ -429,7 +419,7 @@
     				</div>
     				<div class="timeline-content right">
         				<div class="time">9 月 15 日 — 10 月 15 日</div>
-    					<h4 class="title">验证冠军系统与随机选择的系统性能</h4>
+    					<h4 class="title">验证提交系统的性能</h4>
 <!--    					<div class="desc">-->
 <!--    						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.   					              -->
 <!--    				    </div>-->
@@ -520,7 +510,7 @@
                 <div class="item col-xs-6">
                     <div class="item-inner">
                         <div class="profile-holder">
-                            <img src="assets/images/team/bupt2.jpg" alt="">
+                            <img src="assets/images/team/geroge120.jpg" alt="">
                         </div><!--//profile-holder-->
                         <div class="content-holder">
                             <h4 class="name">George Fazekas</h4>
