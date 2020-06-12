@@ -238,7 +238,7 @@ textarea {
 .bg-gradient {
   background-color: #151721;
   background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(#51597e), to(#151721));
-  background-image: -webkit-radial-gradient(circle, #51597e, #151721);
+  background-image: -webkit-radial-gradient(circle, #404040, #303030);
   background-image: -moz-radial-gradient(circle, #51597e, #151721);
   background-image: -o-radial-gradient(circle, #51597e, #151721);
   background-image: -ms-radial-gradient(circle, #51597e, #151721);
@@ -258,6 +258,7 @@ textarea {
   font-size: 32px;
   position: relative;
   padding-bottom: 5px;
+  font-family: 等线;
 }
 /* ====== Header ======= */
 .header {
@@ -697,11 +698,13 @@ h1.logo a {
   margin: 0 auto;
   margin-bottom: 45px;
   /*margin-bottom: 5px;*/
+  font-family: "等线";
 }
 .updates-section .item-title {
   margin-top: 0;
   margin-bottom: 15px;
   text-align: left;
+  font-family: "等线";
 }
 .updates-section .item-meta {
   color: #999;
@@ -724,6 +727,7 @@ h1.logo a {
   margin: 0 auto;
   margin-bottom: 45px;
   /*margin-bottom: 5px;*/
+  font-family: 等线;
 }
 .yinji-section .item-title {
   margin-top: 0;
@@ -1072,6 +1076,7 @@ h1.logo a {
   }
   .navbar-nav {
     float: none;
+    font-family: "MingLiU";
   }
 }
 /* Medium devices (desktops, 992px and up) */
