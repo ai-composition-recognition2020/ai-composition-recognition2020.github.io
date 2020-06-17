@@ -236,15 +236,31 @@ textarea {
   -o-transition-delay: .6s;
 }
 .bg-gradient {
+  /*background-color: #151721;*/
+  /*background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(#51597e), to(#151721));*/
+  /*background-image: -webkit-radial-gradient(circle, #404040, #303030);*/
+  /*background-image: -moz-radial-gradient(circle, #51597e, #151721);*/
+  /*background-image: -o-radial-gradient(circle, #51597e, #151721);*/
+  /*background-image: -ms-radial-gradient(circle, #51597e, #151721);*/
+  background: url(http://www.csmcw-csmt.cn/img/background.jpg);
+  background-size: 130%;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+.time-bg-gradient {
   background-color: #151721;
   background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(#51597e), to(#151721));
   background-image: -webkit-radial-gradient(circle, #404040, #303030);
   background-image: -moz-radial-gradient(circle, #51597e, #151721);
   background-image: -o-radial-gradient(circle, #51597e, #151721);
   background-image: -ms-radial-gradient(circle, #51597e, #151721);
+  /*background: url(http://www.csmcw-csmt.cn/img/background.jpg);*/
+  /*background-size: 130%;*/
   background-repeat: no-repeat;
   color: #fff;
 }
+
+
 /* Generic section styling */
 .section {
   padding-top: 90px;
