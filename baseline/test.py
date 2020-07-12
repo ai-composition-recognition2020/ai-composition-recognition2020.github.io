@@ -10,7 +10,6 @@ from dataset import MidiDataSet
 from utils import create_fold, format_time, yaml_load, save_csv, logger
 from model import *
 
-
 if __name__ == "__main__":
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
@@ -19,16 +18,16 @@ if __name__ == "__main__":
     parser.add_argument('--eval', action='store_true', help="eval")
 
     # get command line parameter
-    args       = parser.parse_args()
+    args = parser.parse_args()
     model_path = args.model_path
-    mode       = args.eval
+    mode = args.eval
 
     # get config from config.yaml
-    config    = yaml_load("./config.yaml")
-    base_cfg  = config.get("base", {})
+    config = yaml_load("./config.yaml")
+    base_cfg = config.get("base", {})
     model_cfg = config.get("model", {})
 
-    init_input     = model_cfg["init_input"]
+    init_input = model_cfg["init_input"]
 
     # get data path
     eval_data_path = base_cfg.get("eval_data")
@@ -56,9 +55,9 @@ if __name__ == "__main__":
         for i, d in enumerate(dataloader):
             x, y = d
 
-            pred = model.forward(x.to(device)) # 500*128, 4
-            x = x.contiguous().view(-1) # 500*128
-            loss = loss_func(pred.to(device), x.to(device)) # 500*128
+            pred = model.forward(x.to(device))  # 500*128, 4
+            x = x.contiguous().view(-1)  # 500*128
+            loss = loss_func(pred.to(device), x.to(device))  # 500*128
 
             # Score value is larger, the more likely it is human
             human_scores.append(math.exp(loss.item()))
@@ -77,11 +76,11 @@ if __name__ == "__main__":
             name, x = d
 
             pred = model.forward(x.to(device))
-            x = x.contiguous().view(-1) # 500*128
+            x = x.contiguous().view(-1)  # 500*128
             loss = loss_func(pred.to(device), x.to(device))
 
             human_scores.append(math.exp(loss.item()))
-            ai_scores.append(1-math.exp(loss.item()))
+            ai_scores.append(1 - math.exp(loss.item()))
             names.append(name[0])
 
         # save result to csv file

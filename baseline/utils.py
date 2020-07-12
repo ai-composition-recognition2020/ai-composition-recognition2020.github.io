@@ -15,7 +15,6 @@ import torch
 import yaml
 from sklearn.preprocessing import StandardScaler
 
-
 logging.basicConfig(level=logging.DEBUG, filename="demo.log")
 logger = logging.getLogger(' ')
 handler = logging.StreamHandler()
@@ -32,13 +31,14 @@ def load_midi(midi_file: str, config: dict):
     :param config dict: [config dict]
     """
     midi = pretty_midi.PrettyMIDI(midi_file)
-    piano_roll = midi.get_piano_roll(fs=8) # shape: 128, n_columns
-    data = np.argmax(piano_roll[:, :config.get("seq_len", 128)], axis=0) # shape: 128,
+    piano_roll = midi.get_piano_roll(
+        fs=8)  # shape: 128, n_columns see more on the http://craffel.github.io/pretty-midi/
+    data = np.argmax(piano_roll[:, :config.get("seq_len", 128)], axis=0)  # shape: 128,
 
-    return data.reshape(1, -1) # shape: 1, 128
+    return data.reshape(1, -1)  # shape: 1, 128
 
 
-def files_to_vector_array(folder: str, config: dict, scaler:bool=False, test: bool=False):
+def files_to_vector_array(folder: str, config: dict, scaler: bool = False, test: bool = False):
     """
     read midi files from folder and translate them all to vector
 
@@ -63,7 +63,7 @@ def files_to_vector_array(folder: str, config: dict, scaler:bool=False, test: bo
             names.append(midi_file.split("/")[-1])
     else:
         for midi_file in glob.glob(f"{folder}/fake/*"):
-            data = load_midi(midi_file, config) # 1, 128
+            data = load_midi(midi_file, config)  # 1, 128
             if datas is None:
                 datas = data
             else:

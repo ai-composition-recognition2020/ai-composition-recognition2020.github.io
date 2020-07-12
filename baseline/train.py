@@ -35,7 +35,7 @@ def cal_loss(model, loss_func, x, y, opt=None):
 
     pred = model.forward(x)
     y = y.contiguous().view(-1)
-    loss = loss_func(pred, y) #
+    loss = loss_func(pred, y)  #
 
     if opt is not None:
         opt.zero_grad()
@@ -67,27 +67,27 @@ def fit(device, epochs, model, loss_func, opt, train_dl, eval_dl=None):
             loss = 0
             len_of_dl = len(train_dl)
             task_train = progress.add_task("train", phase="TRAIN",
-                                        epoch=f"Epoch: {epoch+1:>3}/{epochs:<3}",
-                                        loss=f"[yellow]Loss: {loss: <8.4f}",
-                                        per=f"1/{len_of_dl}",
-                                        total=len_of_dl)
+                                           epoch=f"Epoch: {epoch + 1:>3}/{epochs:<3}",
+                                           loss=f"[yellow]Loss: {loss: <8.4f}",
+                                           per=f"1/{len_of_dl}",
+                                           total=len_of_dl)
 
             for i, d in enumerate(train_dl):
                 x, y = d
                 loss = cal_loss(model, loss_func, x.to(device), x.to(device), opt)
                 progress.update(task_train, advance=1,
                                 loss=f"[yellow]Loss: {loss: <8.4f}",
-                                per=f"{i+1}/{len_of_dl}")
+                                per=f"{i + 1}/{len_of_dl}")
 
             if eval_dl is not None:
                 model.eval()
                 eval_loss = 0
                 len_of_dl = len(eval_dl)
                 task_eval = progress.add_task("eval", phase="[red]EVAL  ",
-                                            epoch=f"Epoch: {epoch+1:>3}/{epochs:<3}",
-                                            loss=f"[yellow]Loss: {eval_loss: <8.4f}",
-                                            per=f"1/{len_of_dl}",
-                                            total=len_of_dl)
+                                              epoch=f"Epoch: {epoch + 1:>3}/{epochs:<3}",
+                                              loss=f"[yellow]Loss: {eval_loss: <8.4f}",
+                                              per=f"1/{len_of_dl}",
+                                              total=len_of_dl)
 
                 with torch.no_grad():
                     for i, d in enumerate(eval_dl):
@@ -96,42 +96,42 @@ def fit(device, epochs, model, loss_func, opt, train_dl, eval_dl=None):
                         eval_loss = cal_loss(model, loss_func, x.to(device), x.to(device))
                         progress.update(task_eval, advance=1,
                                         loss=f"[yellow]Loss: {eval_loss: <8.4f}",
-                                        per=f"{i+1}/{len_of_dl}")
+                                        per=f"{i + 1}/{len_of_dl}")
 
 
 if __name__ == "__main__":
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
     # load config from config.yaml
-    config    = yaml_load("./config.yaml")
+    config = yaml_load("./config.yaml")
     train_cfg = config.get("train", {})
     model_cfg = config.get("model", {})
-    base_cfg  = config.get("base", {})
+    base_cfg = config.get("base", {})
 
     # config about train
-    epochs     = train_cfg.get("epochs", 1)
+    epochs = train_cfg.get("epochs", 1)
     batch_size = train_cfg.get("batch_size", 16)
-    shuffle    = train_cfg.get("shuffle", True)
-    lr         = train_cfg.get("lr", 0.1)
-    vs         = train_cfg.get("vs", 0)
+    shuffle = train_cfg.get("shuffle", True)
+    lr = train_cfg.get("lr", 0.1)
+    vs = train_cfg.get("vs", 0)
 
     # config about model
-    init_input     = model_cfg["init_input"]
-    model_name     = model_cfg["model"]
+    init_input = model_cfg["init_input"]
+    model_name = model_cfg["model"]
     loss_func_name = model_cfg["loss_func"]
     optimizer_name = model_cfg["optimizer"]
 
     # base config
-    dev_data_path   = base_cfg["dev_data"]
+    dev_data_path = base_cfg["dev_data"]
 
     # dataset and dataloader config
-    dataset          = MidiDataSet(dev_data_path, base_cfg)
+    dataset = MidiDataSet(dev_data_path, base_cfg)
     train_dataloader = None
-    eval_dataloader  = None
+    eval_dataloader = None
 
     # split training data to train and validate
     if vs != 0:
-        val_size   = int(vs * len(dataset))
+        val_size = int(vs * len(dataset))
         train_size = len(dataset) - val_size
         train_dataset, eval_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
     else:
@@ -142,9 +142,9 @@ if __name__ == "__main__":
         eval_dataloader = DataLoader(eval_dataset, batch_size=batch_size, shuffle=shuffle, drop_last=True)
 
     # config model
-    model     = eval(model_name)(*init_input).to(device)
+    model = eval(model_name)(*init_input).to(device)
     loss_func = eval(f"F.{loss_func_name}")
-    opt       = eval(f"optim.{optimizer_name}")(model.parameters(), lr=lr)
+    opt = eval(f"optim.{optimizer_name}")(model.parameters(), lr=lr)
 
     # train
     fit(device, epochs, model, loss_func, opt, train_dataloader, eval_dataloader)

@@ -8,14 +8,14 @@ from sklearn.preprocessing import StandardScaler
 
 
 class MidiDataSet(Dataset):
-    def __init__(self, root_dir:str, cfg:dict, scaler:bool=False, test:bool=False):
+    def __init__(self, root_dir: str, cfg: dict, scaler: bool = False, test: bool = False):
         self.test = test
         self.names, self.midi_datas, self.labels = files_to_vector_array(root_dir, cfg, scaler, test)
 
         if self.midi_datas is None:
             raise RuntimeError("data is empty")
         self.len = len(self.midi_datas)
-        self.midi_datas = torch.from_numpy(self.midi_datas)#.float()
+        self.midi_datas = torch.from_numpy(self.midi_datas)  # .float()
 
     def __len__(self):
         return self.len
