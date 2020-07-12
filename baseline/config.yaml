@@ -1,0 +1,21 @@
+
+base:
+  seq_len: 128
+  dev_data: "./data/dev/"
+  eval_data: "./data/eval/"
+  test_data: "./data/test/"
+
+train:
+  epochs: 10
+  batch_size: 100
+  shuffle: true
+  lr: 0.1
+  # The proportion of validation set
+  # 0 not use validate
+  vs: 0.1
+
+model:
+  init_input: [128, 32, 100]
+  model: AE
+  loss_func: nll_loss
+  optimizer: Adam
