@@ -61,7 +61,7 @@
                         <li class="nav-item"><a class="scrollto" href="#baseline">基线系统</a></li>
                         <li class="nav-item"><a class="scrollto" href="#timeline">赛程安排</a></li>
                         <li class="nav-item"><a class="scrollto" href="#team">赛事委员会</a></li>
-                        <li class="nav-item"><a class="scrollto" href="#contact">联系我们</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#contact">常见问题</a></li>
 <!--                        <li class="nav-item"><a class="scrollto" href="#faq">FAQ</a></li>-->
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->
@@ -100,7 +100,8 @@
 <!--                        <a class="btn btn-primary btn-oval btn-cta" href="http://ali.dlddw.xyz:8080/">立即报名</a>-->
 <!--                    </div>&lt;!&ndash;//cta-container&ndash;&gt;-->
                     <div class="countdown-container">
-                        <span class="hidden-xs">距 离 发 布 训 练 数 据 剩 余   </span><span id="countdown-box" class="countdown-box"></span>
+                        <span class="hidden-xs">距 离 发 布 评 估 数 据 剩 余   </span><span id="countdown-box" class="countdown-box"></span>
+<!--                    在assets/js/main.js中-->
                     </div><!--//countdown-container-->
                     
 <!--                    <div class="intro-container">-->
@@ -160,9 +161,9 @@
                     <p></p>
 
                     <p><font size="5"><strong>数据下载</strong></font></p>
-                    <p>人工智能作曲识别比赛开发集数据集。<a href="https://doi.org/10.5281/zenodo.3670185"><i class="fa fa-download"></i></a>
-                    <br/><a href="https://doi.org/10.5281/zenodo.3685835">
-                    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.3670185.svg"/></a>
+                    <p>人工智能作曲识别比赛开发集数据集。<a href="https://sandbox.zenodo.org/record/646758#.Xwu_JygzY2w"><i class="fa fa-download"></i></a>
+                    <br/><a href="https://sandbox.zenodo.org/record/646758#.Xwu_JygzY2w">
+                    <img src="https://sandbox.zenodo.org/badge/DOI/10.5072/zenodo.646758.svg"/></a>
                     </p>
 
 
@@ -233,12 +234,15 @@
     </section><!--//updates-section-->
 
 
-    <section id="baseline" class="yinji-section section">
+    <section id="baseline" class="updates-section section">
         <div class="container text-center">
             <h2 class="section-title">基线识别系统</h2>
             <div class="item">
                 <div class="item-content">
-                    <p>该基线系统采用自编码器的结构。</p>
+                    <p>该基线系统采用自编码器的结构。编码器，解码器分别为四层的全连接层。训练时，只针对AI生成的音乐训练自编码器；
+                    推断时，将原始输入与解码器输出的重构损失作为分类依据。</p>
+                    <p><a href="https://github.com/ai-composition-recognition2020/ai-composition-recognition2020.github.io/tree/master/baseline">基线系统下载<i class="fa fa-github"></i></a>
+                    </p>
 <!--                    <div class="img-holder center-block">-->
 <!--                        <img class="img-responsive" src="assets/images/flowchart.png" alt="">-->
 <!--                    </div>-->
@@ -250,12 +254,12 @@
 
     <section id="contact" class="yinji-section section">
         <div class="container text-center">
-            <h2 class="section-title">联系我们</h2>
+            <h2 class="section-title">常见问题</h2>
             <div class="item">
 <!--                <h3 class="item-title">基于CRNN的识别系统</h3>-->
 <!--                <div class="item-meta">Posted 1 day ago</div>-->
                 <div class="item-content">
-                    <p>井音吉，赛事协调员，北京邮电大学，联系邮箱jyj@bupt.edu.cn</p>
+                    <p>联系我们：井音吉，赛事协调员，北京邮电大学，联系邮箱jyj@bupt.edu.cn</p>
 <!--                    <div class="img-holder center-block">-->
 <!--                        <img class="img-responsive" src="assets/images/flowchart.png" alt="">-->
 <!--                    </div>-->
