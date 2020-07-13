@@ -205,9 +205,9 @@
                     <p></p>
 
                     <p><font size="5"><strong>Data download</strong></font></p>
-                    <p>AI composition recognition competition development dataset.<a href="https://doi.org/10.5281/zenodo.3670185"><i class="fa fa-download"></i></a>
-                    <br/><a href="https://doi.org/10.5281/zenodo.3685835">
-                    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.3670185.svg"/></a>
+                    <p>AI composition recognition competition development dataset.<a href="https://sandbox.zenodo.org/record/646758#.Xwu_JygzY2w"><i class="fa fa-download"></i></a>
+                    <br/><a href="https://sandbox.zenodo.org/record/646758#.Xwu_JygzY2w">
+                    <img src="https://sandbox.zenodo.org/badge/DOI/10.5072/zenodo.646758.svg"/></a>
                     </p>
                 </div><!--//item-content-->
             </div><!--//item-->
@@ -261,7 +261,7 @@
                     <p>&bullet; <code>Hua_Li_BUPT</code></p>
                     <p>&bullet; <code>Michael_Jordan_UNC</code></p>
                     <p>Make sure your zip-package follows provided file naming convention and directory structure.
-                        The zip package example can be downloaded <a href="https://ai-composition-recognition2020.github.io/Hua_Li_BUPT_taskA.zip">here</a>.</p>
+                        The zip package example can be downloaded <a href="https://github.com/ai-composition-recognition2020/ai-composition-recognition2020.github.io/raw/master/Hua_Li_BUPT.zip">here</a>.</p>
                     <pre>
                         Hua_Li_BUPT.zip                                Zip-package root, Task submissions
                         │
@@ -283,10 +283,15 @@
 <!--                <h3 class="item-title">基于CRNN的识别系统</h3>-->
 <!--                <div class="item-meta">Posted 1 day ago</div>-->
                 <div class="item-content">
-                    <p>The baseline system will be released at the same time when the development dataset is released.</p>
-<!--                    <div class="img-holder center-block">-->
-<!--                        <img class="img-responsive" src="assets/images/flowchart.png" alt="">-->
-<!--                    </div>-->
+                    <p>
+                        The baseline system is the AutoEncoder.
+                        The encoder and the decoder employ 4 fully connected layers respectively.
+                        In the training process, the AutoEncoder is trained by the AI music, and
+                        in the inference process, the reconstruction error between the input and the output
+                        is the criterion of classification.
+                    </p>
+                    <p><a href="https://github.com/ai-composition-recognition2020/ai-composition-recognition2020.github.io/raw/master/baseline.zip">Download<i class="fa fa-github"></i></a>
+                    </p>
                 </div><!--//item-content-->
             </div><!--//item-->
 <!--            <a class="btn btn-secondary btn-oval" href="#">Load More</a>-->
