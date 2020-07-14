@@ -133,7 +133,7 @@
                     <p>提交的技术报告应当遵守第八届全国声音与音乐技术会议的投稿要求（中英文均可），并在比赛截止日期前提交至arXiv上，投稿要求请详见本站相关页面。提交结果时请注意提交系统中的Track选择为“Data Challenge”。</p>
                     <p>组委会保留要求参赛者提交源代码用于系统验证的权利（必要时可以签署源代码保密协议）。
                         参赛者如在组委会要求时拒绝提供源代码，则其参赛资格自动取消。
-                        代码需要实现读取评估数据集，计算，生成系统输出的功能，并且说明使用到的第三方库。</p>
+                        代码可以使用任何编程语言。需要实现读取评估数据集，计算，生成系统输出的功能，并且说明使用到的第三方库。</p>
                     <p>参赛者禁止对验证集数据进行主观判断和标注。如若使用，一经发现则其参赛资格自动取消。</p>
                 </div><!--//item-content-->
                 <div class="img-holder center-block">
@@ -208,11 +208,11 @@
                     <p>系统输出文件应为单个文件（CSV格式，带有标题行），其中包含<strong>评估数据集</strong>中
                     每一个MIDI文件的分类结果，并且结果需要包含每个标签的输出概率值（浮点数类型），以及两种风格的标签（整数类型）。如下表所示。</p>
                     <pre>
-                        file_name          Human（float）           AI（float）         style（int）
-                        0.mid              0.8                      0.2                 0
-                        1.mid              0.75                     0.25                0
-                        2.mid              0.6                      0.4                 1
-                        3.mid              0.1                      0.9                 1
+                                    file_name          AI（float）
+                                    0.mid              0.8
+                                    1.mid              0.25
+                                    2.mid              0.6
+                                    3.mid              0.1
                     </pre>
                     <p>为了避免参赛者提交的文件重名，请使用以下规则来命名提交的文件。</p>
                     <p><code>[first name]_[last name]_[Abbreviation of institute of the corresponding author]</code></p>
@@ -227,7 +227,7 @@
                         │   Hua_Li_BUPT_output.csv                     Task System output
                         │
                         └───Hua_Li_BUPT_code                           Task System code
-                                  code.py</pre>
+                            (Any language is allowed)</pre>
                 </div><!--//item-content-->
             </div><!--//item-->
         </div><!--//container-->
