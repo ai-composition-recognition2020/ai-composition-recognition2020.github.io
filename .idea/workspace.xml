@@ -57,7 +57,7 @@
       <updated>1594520856050</updated>
       <workItem from="1594520857991" duration="9794000" />
       <workItem from="1594605457230" duration="5593000" />
-      <workItem from="1594698525526" duration="3973000" />
+      <workItem from="1594698525526" duration="15721000" />
     </task>
     <servers />
   </component>
@@ -77,6 +77,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1594736303659">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/1920.0.1280.680/0.0.1280.680@0.0.1280.680" timestamp="1594736303659" />
     <state x="1920" y="0" width="921" height="667" maximized="true" key="dock-window-1" timestamp="1594710247576">
       <screen x="1920" y="0" width="1280" height="680" />
     </state>

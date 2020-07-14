@@ -41,8 +41,8 @@ if __name__ == "__main__":
     model.load_state_dict(check_point["state_dict"])
     loss_func = eval(f"F.{check_point['loss_func']}")
 
-    human_scores = []
-    ai_scores = []
+    #  human_scores = []
+    scores = []
     labels = []
 
     # eval if mode is True else test
@@ -60,11 +60,11 @@ if __name__ == "__main__":
             loss = loss_func(pred.to(device), x.to(device))  # 500*128
 
             # Score value is larger, the more likely it is human
-            human_scores.append(math.exp(loss.item()))
+            scores.append(math.exp(loss.item()))
             labels.extend(list(y.numpy()))
 
         # cal Auc
-        print(f"Auc: {roc_auc_score(labels, human_scores)}")
+        print(f"Auc: {roc_auc_score(labels, scores)}")
     else:
         logger.info(f"test")
         names = []
@@ -79,12 +79,11 @@ if __name__ == "__main__":
             x = x.contiguous().view(-1)  # 500*128
             loss = loss_func(pred.to(device), x.to(device))
 
-            human_scores.append(math.exp(loss.item()))
-            ai_scores.append(1 - math.exp(loss.item()))
+            scores.append(math.exp(loss.item()))
             names.append(name[0])
 
         # save result to csv file
         # sorted by name and then save to CSV file
-        names, human_scores, ai_scores = list(zip(*sorted(zip(names, human_scores, ai_scores), key=lambda x: x[0])))
-        dataframe = pd.DataFrame({"file_name": names, "Human": human_scores, "AI": ai_scores})
+        names, scores = list(zip(*sorted(zip(names, scores), key=lambda x: x[0])))
+        dataframe = pd.DataFrame({"file_name": names, "score": scores})
         dataframe.to_csv("result.csv", index=False, sep=",")
