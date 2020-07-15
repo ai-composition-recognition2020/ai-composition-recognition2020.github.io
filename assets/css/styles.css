@@ -398,11 +398,13 @@ h1.logo a {
 .promo-section {
   padding-top: 150px;
   padding-bottom: 120px;
+  text-align: justify;
 }
 .en-promo-section {
   padding-top: 150px;
   padding-bottom: 120px;
   line-height: 10px;
+  text-align: justify;
 }
 .promo-section .headline {
   margin-top: 0;
@@ -730,6 +732,7 @@ h1.logo a {
   color: #586A8F;
   text-align: left;
   font-size: large;
+  text-align: justify;
 }
 .updates-section .img-holder {
   display: inline-block;
