@@ -176,11 +176,10 @@
                     <style>
                         .p1{text-indent: 2em;}
                     </style>
-                    <p>参赛者需要提交一个打包的zip文件，该zip包括：</p>
-                    <p class="p1">&bullet; 系统的输出文件（*.csv）</p>
-                    <p class="p1">&bullet; 对系统作出详细解释的技术报告（*.pdf）</p>
-                    <p class="p1">&bullet; 可以运行的完整系统（放在单独的文件夹中）</p>
-                    <p>系统输出文件应为单个文件（CSV格式，带有标题行），其中包含<strong>评估数据集</strong>中
+                    <p>参赛者需要提交一个打包的zip文件，该zip包括一份<strong>技术报告</strong>和一份<strong>二级zip文件</strong>：</p>
+                    <p class="p1">&bullet; 对系统作出详细解释的技术报告（*.pdf），技术报告需要匿名化，并且符合<a href="http://www.csmcw-csmt.cn/file.html">CSMT的投稿要求。</a></p>
+
+                    <p class="p1">&bullet; 二级zip文件中需要包含：1.可以运行的完整代码。2.系统的输出文件（*.csv），系统输出文件应为单个文件（CSV格式，带有标题行），其中包含<strong>评估数据集</strong>中
                     每一个MIDI文件的得分（浮点数类型），分值越高代表越有可能为人类创作的音乐，分值越低代表越有可能为AI生成的音乐，如下表所示。</p>
                     <pre>
                                     file_name          score
@@ -198,11 +197,16 @@
                     <pre>
                         Hua_Li_BUPT.zip                                Zip-package root, Task submissions
                         │
-                        │   Hua_Li_BUPT_technical_report.pdf           Technical report
-                        │   Hua_Li_BUPT_output.csv                     Task System output
+                        └───Hua_Li_BUPT_technical_report.pdf           Technical report
                         │
-                        └───Hua_Li_BUPT_code                           Task System code
-                            (Any language is allowed)</pre>
+                        │
+                        └───output_code.zip
+                               Hua_Li_BUPT_code                        Task System code
+                               Hua_Li_BUPT_output.csv                  Task System output
+                               (Any language is allowed)</pre>
+
+
+
                 </div><!--//item-content-->
             </div><!--//item-->
         </div><!--//container-->
